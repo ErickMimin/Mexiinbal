@@ -1,0 +1,81 @@
+<!-- Go to login -->
+<div class="go-back pl-2">
+    <i  [routerLink]="['..']" class="material-icons">keyboard_backspace</i>
+</div>
+<div class="container container-all">
+    <br>
+    <div [formGroup]="form" class="row justify-content-center">
+        <div class="col-10 col-sm-8 col-md-6 col-lg-4 card shadow pt-2">
+            <!-- Form -->
+                <!-- User-Email -->
+            <div class="form-group">
+                <label for="user">Usuario</label>
+                <input type="text" class="form-control" id="user"  formControlName="user" [class.invalid]="form['controls'].user.errors?.nospace || form['controls'].user.errors?.maxlength" placeholder="Usuario">
+                <div class="text-center row">
+                    <span class="text-invalid col-12" *ngIf="form['controls'].user.errors?.maxlength">Este no puede contener mas de 20 caracteres </span>
+                    <span class="text-invalid col-12" *ngIf="form['controls'].user.errors?.nospace">Este campo no puede ir en blanco</span>                    
+                </div>                    
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email"  formControlName="email" [class.invalid]="form['controls'].email.errors?.email" placeholder="Email">
+                <div class="text-center row">
+                    <span class="text-invalid col-12" *ngIf="form['controls'].email.errors?.email">Este campo debe tener un formato de email válido</span>
+                </div>
+            </div>          
+            <!-- Pass-ConfirmPass -->
+            <div class="form-group" formGroupName="passwords">
+                <label for="pass">Contraseña</label>
+                <input type="password" class="form-control" id="pass" formControlName="pass" [class.invalid]="form['controls'].passwords.controls.pass.errors?.minlength || form['controls'].passwords.controls.pass.errors?.nospace" placeholder="Contraseña">
+                <div class="text-center row">
+                    <span class="text-invalid col-12" *ngIf="form['controls'].passwords.controls.pass.errors?.minlength">La contraseña debe tener al menos 8 caracteres</span>
+                    <span class="text-invalid col-12" *ngIf="form['controls'].passwords.controls.pass.errors?.nospace">Este campo no puede ir en blanco</span>                        
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="conPass">Confirmar contraseña</label>
+                <input type="password" class="form-control" id="conPass"  placeholder="Confirmar contraseña">
+                <div class="text-center row">
+                    <span class="text-invalid col-12" *ngIf="form['controls'].passwords.controls.conPass.errors?.minlength"></span>
+                </div>
+            </div>           
+            <div  class="row pb-2 ml-1 mr-1 justify-content-center align-middle">
+                <button type="button" class="btn btn-sm bg-mex mr-2" (click)="print()">Resgistrar</button>                                
+                <div class="form-check">
+                    <input class="form-check-input mt-2" type="checkbox" formControlName="accept" id="check">
+                    <label class="form-check-label" for="check">Aceptar </label>
+                    <a class="badge badge-light ml-1 p-0"role="button" data-toggle="modal" data-target="#exampleModal"> términos y condiciones</a>                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal terminos y condiciones -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Términos y condiciones</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="terms && terms.length" class="container-fluid">
+            <div *ngFor="let item of terms" class="row">
+                <div *ngIf="item.subtitle" class="col-12">
+                    <h5> {{ item.subtitle }}</h5>
+                </div>
+                <div class="col-12">
+                    <p [innerHtml]="item.content"></p> <!-- in innerHtml introduce break-lines -->
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn  bg-mex" data-dismiss="modal" (click)="toogleCheck(true)">Aceptar</button>
+        <button type="button" class="btn  bg-mex" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

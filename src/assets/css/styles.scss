@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+@import './colors.scss';
+@font-face{
+    font-family: "Mexiinbal-font";
+    src : url(../fonts/Vintage_fair.ttf);
+}
+.container-all{
+    padding-top : 58px;
+}
+.navbar{
+    position:fixed;
+    z-index:100;
+    width:100%;
+    background-color: $black_app;
+    color : $white_app;
+}
+.dropdown-divider{
+    border-top : 1px solid $black_app !important;
+}
+.badge{
+    color : $black_app !important;
+    cursor: pointer;
+} 
+.bg-mex{
+    background-color : $black_app;
+    color : $white_app;
+}
+a.badge:hover {
+    background: $gray_app;
+}
+.go-back{
+    color : $white_app;
+    position: fixed;
+    padding-top: 1rem;
+    z-index: 101;
+    cursor: pointer;
+}
+.text-invalid{
+    width : auto;
+    color : $error_color;
+    font-size : 10px;
+}
+.form-check-label , .form-check-label+a{
+    font-size : 10px;
+}
+.form-group > label {
+    color :$black_app;
+}
+.form-group input{
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.form-group input:focus {
+    border: 1px solid $black_app;
+    -webkit-box-shadow: 0px 2px 2px 0px $black_app;
+    -moz-box-shadow: 0px 2px 2px 0px $black_app;
+    box-shadow: 0px 2px 2px 0px $black_app;
+}
+.form-group input.invalid {
+    border: 1px solid $error_color;
+    -webkit-box-shadow: 0px 2px 2px 0px $error_color;
+    -moz-box-shadow: 0px 2px 2px 0px $error_color;
+    box-shadow: 0px 2px 2px 0px $error_color;
+}

@@ -1,0 +1,30 @@
+<div class="container container-all">
+  <br>
+  <!-- This row is centering and its width fits its content -->
+  <div class="row justify-content-center">
+    <div class="col-auto card shadow">
+      <!-- Mexiinbal logo -->
+      <img src="../../assets/img/MexnowWeb.png" alt="mex_logo" width="250" height="250">
+      <div class="dropdown-divider"></div>
+      <!-- Form login -->
+      <div class="form-group">
+          <label for="user">Usuario - Email</label>
+          <input type="text" class="form-control" id="user" placeholder="Usuario">
+      </div>
+      <div class="form-group">
+          <label for="pass">Contraseña</label>
+          <input type="text" class="form-control" id="pass" placeholder="Contraseña">
+      </div>
+      <!-- Login and register link -->
+      <div  class="row pb-2">
+        <div class="col-8">
+          <button type="button" class="btn btn-sm btn-block bg-mex" >Entrar</button>
+        </div>
+        <div class="valign-wrapper col-4">
+            <a  [routerLink]="[ '/Register']" class="badge badge-light"> Registrarse </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
