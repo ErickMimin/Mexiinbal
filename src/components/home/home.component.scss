@@ -1,0 +1,41 @@
+@import '../../assets/css/colors.scss';
+.btn-menu{
+    margin-top: 6px;
+    position: fixed;
+    z-index: 100;
+}
+li.active{
+    color : $white_app;
+    background: rgba(37,37,38,1);
+    background: -moz-linear-gradient(left, rgba(37,37,38,1) 0%, rgba(37,37,38,1) 72%, rgba(90,90,91,1) 86%, rgba(143,143,143,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(37,37,38,1)), color-stop(72%, rgba(37,37,38,1)), color-stop(86%, rgba(90,90,91,1)), color-stop(100%, rgba(143,143,143,1)));
+    background: -webkit-linear-gradient(left, rgba(37,37,38,1) 0%, rgba(37,37,38,1) 72%, rgba(90,90,91,1) 86%, rgba(143,143,143,1) 100%);
+    background: -o-linear-gradient(left, rgba(37,37,38,1) 0%, rgba(37,37,38,1) 72%, rgba(90,90,91,1) 86%, rgba(143,143,143,1) 100%);
+    background: -ms-linear-gradient(left, rgba(37,37,38,1) 0%, rgba(37,37,38,1) 72%, rgba(90,90,91,1) 86%, rgba(143,143,143,1) 100%);
+    background: linear-gradient(to right, rgba(37,37,38,1) 0%, rgba(37,37,38,1) 72%, rgba(90,90,91,1) 86%, rgba(143,143,143,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#252526', endColorstr='#8f8f8f', GradientType=1 );
+}
+.menu{
+    width: 15%;
+    position: fixed;
+    z-index: 100;
+    top: 58px;
+    font-family: 'Mexiinbal-font';
+    background-color: $white_app;
+    border-bottom-right-radius: 10px;
+}
+@media only screen and (max-width: 576px) {
+    .menu{
+        width  : 60%
+    }
+}
+@media only screen and (min-width: 576px) {
+    .menu{
+        width  : 40%
+    }
+}
+@media only screen and (min-width: 720px) {
+    .menu{
+        width  : 20%
+    }
+}

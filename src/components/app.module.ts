@@ -10,11 +10,13 @@ import { RegisterComponent } from './register/register.component';
 import { RoutesApp } from './app.routing';
 import { RegisterService } from './register/register.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
+    HomeComponent,
     AppComponent
   ],
   imports: [

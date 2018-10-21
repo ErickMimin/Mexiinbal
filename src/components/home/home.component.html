@@ -1,0 +1,16 @@
+<button class="btn btn-outline-secondary btn-menu" (click)="menuActive = !menuActive">
+    <i class="material-icons align-middle">menu</i>
+</button>
+<div [style.height.px]="mapHeight()" [hidden]="!menuActive" class="menu">
+    <ul class="nav flex-column">
+        <li class="nav-item pt-2" [class.active]="site==1">
+            <a class="nav-link">INICIO</a>
+        </li>
+        <li class="nav-item pt-2">
+            <a class="nav-link">FAVORITOS</a>
+        </li>
+    </ul>
+</div>
+<div class="container-all">
+    <div id="geofence-map" [style.height.px]="mapHeight()"></div>
+</div>
